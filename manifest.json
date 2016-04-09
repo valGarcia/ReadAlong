@@ -17,14 +17,7 @@
   },
   "content_scripts": [ {
     "js": ["jquery-1.11.3.min.js", "js/content.js"],
-    "matches": [ "http://*/*", "https://*/*"],
-    "run_at": "document_end"
-  }],
-  "permissions":[
-    //"history"
-    // "fileSystem", 
-    //   {"fileSystem": ["write"]}, 
-    //   {"fileSystem": ["write", "retainEntries", "directory"]} 
-  ]
+    "matches": [ "http://*/*", "https://*/*"]
+    //"run_at": "document_end"
+  }]
 }
-//}
