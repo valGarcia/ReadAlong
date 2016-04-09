@@ -13,14 +13,17 @@
       "19": "icon.png",
       "38": "icon38.png"
     },
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
   "content_scripts": [ {
-    "js": ["jquery-1.11.3.min.js", "js/content.js"],
+    "js": ["js/jquery-1.11.3.min.js", "js/content.js"],
     "matches": [ "http://*/*", "https://*/*"]
     //"run_at": "document_end"
   }],
   "web_accessible_resources": [
     "index.html"
+  ],
+  "permissions": [
+    "activeTab"
   ]
 }
