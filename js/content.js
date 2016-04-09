@@ -41,25 +41,23 @@
 // var highlight = "A few Months";
 // var oldKeyword = "";
 // highlighter;
+
+
 var url = "http://www.cnn.com/2016/04/08/tech/spacex-historic-rocket-landing-irpt/index.html";
 $.getJSON('http://api.diffbot.com/v3/analyze?token=fa2c9c8f090cbf172b891ca4499ecc45&url='+url, function(response) {
-    var obj = response.objects[0].text;
+    var obj = response.objects[0];
     var text = obj.text;
     var title = obj.title;
-    
+    replace(text, title);
 });
 
-function replace(){
-    //var all_code = document.body.innerHTML;
-    //console.log(all_code);
-    //var our_code = "<html><body style=\"width: 300px\"><p>Here is the popup</p></body></html>";
-    //var our_code = document.open("text/html", "index");
-    // console.log(our_code);
-    // console.log(our_code.text);
-    // console.log(our_code.textContent);
-    //document.write(our_code.text);
-    
-    $("body").replaceWith("<html><body style=\"width: 300px\"><p>Here is the popup</p></body></html>");
+
+function replace(text, title){
+    console.log(text);
+    var our_code = "<html><body>";
+    our_code += "<h1>"+title+"</h1>";
+    our_code +="<p>"+text+"</p>";
+    our_code += "</html></body>";
+    $("body").replaceWith(our_code);
 }
 
-replace();
