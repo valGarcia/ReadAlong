@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "ReadAlong",
+  "version": "1.0",
+  "description": "Read along feature to help you practice reading",
+// "app":{
+//   "launch":{
+//     "local_path": "index.html",
+//     "default_icon": "book.png"
+//   },
+  "browser_action": {
+    "default_icon": {
+      "19": "icon.png",
+      "38": "icon38.png"
+    },
+    "default_popup": "index.html"
+  },
+  "content_scripts": [ {
+    "js": ["jquery-1.11.3.min.js", "js/app.js" , "js/content.js"],
+    "matches": [ "http://*/*", "https://*/*"],
+    "run_at": "document_end"
+  }],
+  "permissions":[
+    "history"
+    // "fileSystem", 
+    //   {"fileSystem": ["write"]}, 
+    //   {"fileSystem": ["write", "retainEntries", "directory"]} 
+  ]
+}
+//}
